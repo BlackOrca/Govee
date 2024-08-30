@@ -95,6 +95,7 @@ eval('declare(strict_types=1);namespace Govee {?>' . file_get_contents(__DIR__ .
 
         public function ReceiveData($JSONString)
         {
+            this=>SendDebug(__FUNCTION__ . ' :: JSON', $JSONString, 0);
             $data = json_decode($JSONString, true);
             $buffer = json_decode($data['Buffer'], true);
             $deviceData = $buffer['msg']['data'];
